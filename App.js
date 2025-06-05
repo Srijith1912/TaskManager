@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css'
 import { useTheme } from './ThemeContext';
 
@@ -14,6 +14,12 @@ function App() {
       setText('');
     }
   }
+
+  useEffect(() => {
+
+    console.log("Theme changed to: ", theme)
+
+  }, [theme]);
 
   return (
     <div className={`App ${theme}`}>
