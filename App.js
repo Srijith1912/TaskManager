@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
+import './App.css'
+import { useTheme } from './ThemeContext';
 
 function App() {
 
   const [tasks, setTasks] = useState([]);
   const [text, setText] = useState('');
+  const [theme, toggleTheme] = useTheme();
 
   const addTask = () => {
     if(text.trim()){
@@ -13,8 +16,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
       <h1>Task Manager</h1>
+      <button onClick={toggleTheme}>Toggle Theme ({theme})</button>
       <input 
       value={text}
       onChange={(e) => setText(e.target.value)}
