@@ -24,4 +24,4 @@ A React-based task management application.
   - Enhanced TaskManager with task deletion functionality and UI improvements (hover effects, centered layout, borders).
   - Debugged and fixed Tailwind styling issues (corrected `index.css` and `tailwind.config.js`).
   - Addressed npm vulnerabilities using `npm audit fix`.
-  - **Files**: `App.js`, `ThemeContext.js`, `index.css`, `tailwind.config.js`, `README.md`
+  - **Files**: `App.js`, `ThemeContext.js`, `index.css`, `tailwind.config.js`
