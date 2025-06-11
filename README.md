@@ -27,7 +27,7 @@ A React-based task management application.
   - **Files**: `App.js`, `ThemeContext.js`, `index.css`, `index.js`, `tailwind.config.js`
  
 - **June 9, 2025**:
-- Studied freeCodeCamp “Full-Stack Tutorial” (React-Express integration) (1 hour).
-- Integrated Axios into Task Manager’s React front-end to fetch and add tasks via API calls to `/tasks` endpoint (1 hour).
-- Troubleshot backend integration issues, including CORS configuration and API endpoint testing with Postman.
-- Committed Axios integration code and added server-side logging for debugging.
+  - Studied freeCodeCamp “Full-Stack Tutorial” (React-Express integration) (1 hour).
+  - Integrated Axios into Task Manager’s React front-end to fetch and add tasks via API calls to `/tasks` endpoint (1 hour).
+  - Troubleshot backend integration issues, including CORS configuration and API endpoint testing with Postman.
+  - Committed Axios integration code and added server-side logging for debugging.
