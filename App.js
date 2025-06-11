@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from './ThemeContext';
+import axios from 'axios';
+
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -10,17 +12,28 @@ function App() {
     console.log("Theme changed to:", theme);
   }, [theme]);
 
+  useEffect(() => {
+    axios.get('http://localhost:3001/tasks')
+      .then(response => setTasks(response.data))
+      .catch(error => console.error('Error fetching tasks: ', error));
+  }, []);
+
   const addTask = () => {
     if (text.trim()) {
-      setTasks([...tasks, text]);
+      const newTask = {title: text, completed: false};
+      axios.post('http://localhost:3001/tasks', newTask)
+      .then(response => {console.log('POST /tasks result: ', response.data);setTasks([...tasks, response.data]);})
+      .catch(err => console.error('Error adding task: ', err))
       setText('');
     }
   };
 
-  const deleteTask = (index) => {
-    setTasks(tasks.filter((_, i) => i !== index));
+  const deleteTask = (id) => {
+    axios.delete(`http://localhost:3001/tasks/${id}`)
+    .then(() => setTasks(tasks.filter(task => task.id !== id)))
+    .catch(error => console.error('Error deleting task', error));
   };
-
+  
   return (
     <div className={`min-h-screen p-4 flex flex-col items-center justify-center ${themeStyles.container}`}>
       <h1 className="text-3xl font-bold text-center mb-4">Task Manager</h1>
@@ -45,14 +58,14 @@ function App() {
         </button>
       </div>
       <ul className="max-w-md mx-auto">
-        {tasks.map((task, index) => (
+        {tasks.map(task => (
           <li
-            key={index}
+            key={task.id}
             className={`p-3 mb-3 rounded-lg transition-all duration-200 ${themeStyles.listItem} hover:scale-105 hover:shadow-md flex justify-between items-center`}
           >
-            {task}
+            {task.title}
             <button
-              onClick={() => deleteTask(index)}
+              onClick={() => deleteTask(task.id)}
               className="text-red-500 hover:text-red-700 pl-4"
             >
               Delete
