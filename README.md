@@ -40,4 +40,5 @@ A React-based task management application.
 - **June 14, 2025**:
   - Studied freeCodeCamp’s “Testing Node.js Apps” tutorial (1 hour).
   - Wrote Jest tests with Supertest for TaskManager’s `/tasks` endpoints, using MongoDB Memory Server (1 hour).
+  - Modified TaskManager to support user-specific tasks by adding `userId` to tasks and updating API routes (1 hour).
   - Committed tests and updated README.
