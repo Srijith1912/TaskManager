@@ -31,3 +31,13 @@ A React-based task management application.
   - Integrated Axios into Task Manager’s React front-end to fetch and add tasks via API calls to `/tasks` endpoint (1 hour).
   - Troubleshot backend integration issues, including CORS configuration and API endpoint testing with Postman.
   - Committed Axios integration code and added server-side logging for debugging.
+
+- **June 13, 2025**:
+- Studied freeCodeCamp’s “JWT Authentication” tutorial (1 hour).
+- Implemented JWT authentication in the TaskManager backend with `/register` and `/login` routes, protected `/tasks` endpoints with token verification, and updated the React front-end with login/register forms and Axios token handling (1.5 hours).
+- Committed JWT implementation and updated README.
+
+- **June 14, 2025**:
+- Studied freeCodeCamp’s “Testing Node.js Apps” tutorial (1 hour).
+- Wrote Jest tests with Supertest for TaskManager’s `/tasks` endpoints, using MongoDB Memory Server (1 hour).
+- Committed tests and updated README.
