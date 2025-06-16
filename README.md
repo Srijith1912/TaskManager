@@ -1,4 +1,4 @@
-# TaskManager#
+# TaskManager
 A React-based task management application.
 
 ## Progress Log
